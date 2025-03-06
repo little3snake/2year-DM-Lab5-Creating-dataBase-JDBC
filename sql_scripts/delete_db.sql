@@ -1,0 +1,7 @@
+CREATE OR REPLACE FUNCTION drop_database(db_name VARCHAR)
+RETURNS VOID AS
+$$
+BEGIN
+EXECUTE format('DROP DATABASE IF EXISTS %I', db_name);
+END;
+$$ LANGUAGE plpgsql;
